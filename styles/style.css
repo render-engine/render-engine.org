@@ -1,0 +1,21 @@
+body {
+    font-family: "Arial", "sans-serif";
+}
+
+.container {
+    margin: auto;
+    width: 85%;
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+}
+
+img.re_logo {
+  float: right;
+  object-fit: contain;
+  width: clamp(240px, 30%, 720px);
+  margin: 10px;
+}
+

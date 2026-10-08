@@ -1,0 +1,15 @@
+{% extends "base_templates/_base.html" %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="/static/style.css">
+{% endblock %}
+{% block header %}
+<img src="img/render-engine-logo.png" alt="Render Engine Logo" class="re_logo"/>
+{% endblock %}
+{% block footer %}
+<footer class="container">
+    <hr />
+    <p><a href="{{SITE_URL}}">{{SITE_URL}}</a></p>
+    <p>Built with <a href="https://render-engine.org/">Render Engine</a></p>
+</footer>
+{% endblock %}
