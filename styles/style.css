@@ -15,7 +15,10 @@ footer {
 img.re_logo {
   float: right;
   object-fit: contain;
-  width: clamp(240px, 30%, 720px);
+  width: clamp(100px, 30%, 200px);
   margin: 10px;
+  position: sticky;
+  top: 10px;
+  right: 10px;
 }
 
