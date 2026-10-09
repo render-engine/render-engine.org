@@ -387,6 +387,18 @@ wheels = [
 ]
 
 [[package]]
+name = "re-plugin-pack"
+version = "2025.6.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "render-engine" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b0/33/51a455727b1e522aa168b08aa3ef67870effafe39d15be5cb86400d38542/re_plugin_pack-2025.6.1.tar.gz", hash = "sha256:f3788e83145e6947d169a162058713dc6f2bba5391bec7ef58b2ae7c89429f6e", size = 7823, upload-time = "2025-06-27T19:45:29.625Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f8/99/b94db634a89ceb78fecdec9fb5383719512875939bc9f8d7d9aa442fbc25/re_plugin_pack-2025.6.1-py3-none-any.whl", hash = "sha256:4a2225b3e6b9e4fb73216fdf5770c8b90feaef37a9f24191be7575b61343906f", size = 10405, upload-time = "2025-06-27T19:45:28.517Z" },
+]
+
+[[package]]
 name = "render-engine"
 version = "2026.9.1"
 source = { registry = "https://pypi.org/simple" }
@@ -440,12 +452,14 @@ name = "render-engine-org"
 version = "1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "re-plugin-pack" },
     { name = "render-engine" },
     { name = "render-engine-cli" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "re-plugin-pack", specifier = "==2025.6.1" },
     { name = "render-engine", specifier = "==2026.9.1" },
     { name = "render-engine-cli", specifier = "==2025.11.1" },
 ]
