@@ -3,5 +3,23 @@
 {% block content %}
 <div class="container">
 {{ content }}
+  {% for collection, collection_data in COLLECTIONS.items() %}
+  <div class="collection">
+    <h3>Most recent <a href="{{ collection_data['url'] }}">{{ collection }}</a> entries:</h3>
+    <div class="latest_entries">
+    {% for entry in collection_data['entries'] %}
+    <a href="{{ entry['url'] }}" class="card">
+      <p class="title">{{ entry['title'] }}</p>
+    {% if entry.get('description') %}
+      <p class="description">{{ entry['description'] }}</p>
+    {% endif %}
+    {% if entry.get('date') %}
+      <p class="published">Published: {{ entry.date | format_datetime("%B %d, %Y") }}</p>
+    {% endif %}
+    </a>
+    {% endfor %}
+    </div>
+  </div>
+{% endfor %}
 </div>
 {% endblock %}

@@ -2,14 +2,31 @@
 {% block head %}
 {{super()}}
 <link rel="stylesheet" href="/styles/style.css">
-{% endblock %}
+<link rel="icon" type="image/png" href="/img/render-engine-logo-small.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/img/render-engine-logo-small.png" sizes="32X32">
+<{% endblock %}
 {% block header %}
+<header class="head_foot_container">
+<div class="container">
 <img src="/img/render-engine-logo-small.png" alt="Render Engine Logo" class="re_logo"/>
+{% if title %}
+  <h1>{{ title }}</h1>
+{% endif %}
+</div>
+</header>
 {% endblock %}
 {% block footer %}
-<footer class="container">
-    <hr />
-    <p><a href="{{SITE_URL}}">{{SITE_URL}}</a></p>
-    <p>Built with <a href="https://render-engine.org/">Render Engine</a></p>
+<footer class="head_foot_container">
+  <div class="container">
+  <div class="bottom_nav">
+    <ul class="bottom_nav_list">
+    {% for name, url in bottom_nav.items() %}
+      <li class="bottom_nav_entry"><a href="{{ url }}">{{ name }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+    <p><span class="left"><a href="{{SITE_URL}}">{{SITE_URL}}</a></span>
+    <span class="right">Built with <a href="https://render-engine.org/">Render Engine</a></span></p>
+  </div>
 </footer>
 {% endblock %}
