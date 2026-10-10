@@ -1,5 +1,7 @@
 body {
     font-family: "Arial", "sans-serif";
+    font-size: 14pt;
+    min-height: 1vh;
 }
 
 .container {
@@ -7,18 +9,214 @@ body {
     width: 85%;
 }
 
+.head_foot_container {
+  color: white;
+  background-color: black;
+  width: 100%;
+  min-height: 6em;
+  padding-top: 0.25em;
+}
+
+.head_foot_container a {
+  color: lightgrey;
+  text-decoration: underline;
+}
+
+.head_foot_container a:hover,
+.head_foot_container a:focus {
+  text-decoration: none;
+}
+
+.head_foot_container a:visited {
+  color: darkgrey;
+}
+
+.bottom_nav_list {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  padding-left: 0;
+  justify-content: center;
+}
+
+.bottom_nav_list li {
+  padding: 0 1em 0 0;
+  margin: 0 0.25em;
+}
+
+header.head_foot_container {
+  min-height: 3em;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
 footer {
-    margin-top: 2em;
-    text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 2em;
+  position: sticky;
+  bottom: 0px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+}
+
+.title {
+  overflow: auto;
 }
 
 img.re_logo {
   float: right;
   object-fit: contain;
   width: clamp(100px, 30%, 200px);
-  margin: 10px;
-  position: sticky;
-  top: 10px;
-  right: 10px;
+}
+
+.left {
+  float: left;
+  padding-inline: 0.25em;
+  padding-left: inherit;
+  padding-right: 0;
+}
+
+.right {
+  float: right;
+  padding-inline: 0.25em;
+  padding-left: 0;
+  padding-right: inherit;
+}
+
+.latest_entries {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 25px;
+  list-style: none;
+  padding: 0 0.1em;
+  text-align: initial;
+  margin: 0 2%;
+  align-content: space-around;
+}
+
+.card {
+  flex: auto;
+  display: flex;
+  flex-flow: column wrap;
+  border-radius: 7px;
+  margin: 0;
+  padding: 0 0.25em;
+  overflow: clip;
+  background-color: rgb(233 238 235 / 60%);
+  text-decoration: none;
+  width: 95%;  
+  border: 1px solid black;
+  border-radius: 7px 0 15px 0;
+}
+
+
+.card:hover,
+.card:focus {
+  background-color: lightgrey;
+  font-weight: initial;
+  color: #030082;
+}
+
+.card:visited {
+  color: #030082;
+}
+
+.card .title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.published {
+  margin-top: auto;
+  margin-bottom: 2px;
+  padding: 0;
+  bottom: 0px;
+}
+
+/* Large monitor */
+@media (width > 13in) {
+  .latest_entries {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+}
+
+/* Tablet in landscape or small monitor */
+@media (width <= 13in) {
+  .latest_entries {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+/* Tablet in portrait or phone in landscape */
+@media (width <= 10in) {
+  .latest_entries {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container {
+    width: 95%;
+  }
+  
+  /* If we are rendering on a smaller screen in landscape the sticky
+   * items end up using all of the display. Use `relative` positioning
+   * to keep them at the top and bottom just not sticky. */
+  @media (orientation: landscape) {
+    header.head_foot_container,
+    footer {
+      position: relative;
+    }
+  }
+}
+
+/* Phone in portrait */
+@media (width <= 6in) {
+  .latest_entries {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: 98%;
+  }
+ 
+  /* If we are rendering on a smaller screen in landscape the sticky
+   * items end up using all of the display. Use `relative` positioning
+   * to keep them at the top and bottom just not sticky. */
+ @media (orientation: landscape) {
+    header.head_foot_container,
+    footer {
+      position: relative;
+    }
+  }
+}
+
+.vertical_divider {
+  border-right: 2px solid white;
+  margin: 0 0.5em 0 0.25em;
+}
+
+.references {
+  display: flex;
+  flex-flow: row wrap;
+  vertical-align: middle;
+  margin-top: 1em;
+  border-top: 1px solid black;
+  padding-top: 0.5em;
+  text-align: center;
+  justify-content: center;
+}
+
+.collection {
+  border-top: 1px solid black;
 }
 
