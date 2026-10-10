@@ -15,7 +15,6 @@ body {
   width: 100%;
   min-height: 6em;
   padding-top: 0.25em;
-  margin: 0.2em;
 }
 
 .head_foot_container a {
@@ -36,8 +35,9 @@ body {
   list-style: none;
   display: flex;
   flex-flow: row wrap;
-  align-content: space-around;
   width: 100%;
+  padding-left: 0;
+  justify-content: center;
 }
 
 .bottom_nav_list li {
@@ -54,10 +54,12 @@ header.head_foot_container {
 }
 
 footer {
+  display: flex;
+  flex-flow: row wrap;
   margin-top: 2em;
-  text-align: center;
   position: sticky;
   bottom: 0px;
+  text-align: center;
 }
 
 header {
@@ -176,5 +178,25 @@ img.re_logo {
   .container {
     width: 98%;
   }
+}
+
+.vertical_divider {
+  border-right: 2px solid white;
+  margin: 0 0.5em 0 0.25em;
+}
+
+.references {
+  display: flex;
+  flex-flow: row wrap;
+  vertical-align: middle;
+  margin-top: 1em;
+  border-top: 1px solid black;
+  padding-top: 0.5em;
+  text-align: center;
+  justify-content: center;
+}
+
+.collection {
+  border-top: 1px solid black;
 }
 
