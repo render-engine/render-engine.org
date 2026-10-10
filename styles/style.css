@@ -167,6 +167,16 @@ img.re_logo {
   .container {
     width: 95%;
   }
+  
+  /* If we are rendering on a smaller screen in landscape the sticky
+   * items end up using all of the display. Use `relative` positioning
+   * to keep them at the top and bottom just not sticky. */
+  @media (orientation: landscape) {
+    header.head_foot_container,
+    footer {
+      position: relative;
+    }
+  }
 }
 
 /* Phone in portrait */
@@ -177,6 +187,16 @@ img.re_logo {
 
   .container {
     width: 98%;
+  }
+ 
+  /* If we are rendering on a smaller screen in landscape the sticky
+   * items end up using all of the display. Use `relative` positioning
+   * to keep them at the top and bottom just not sticky. */
+ @media (orientation: landscape) {
+    header.head_foot_container,
+    footer {
+      position: relative;
+    }
   }
 }
 
